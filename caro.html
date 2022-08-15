@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Caro Game Simple</h3>
+<p id="caro"></p>
+<input type="button" value="chọn ô" onclick="Giatri()">
+<script>
+
+  let b = document.getElementById("caro");
+  let bang=[];
+  let data="";
+
+  for (let i = 0; i < 5; i++) {
+    bang[i] = [0,0,0,0,0];
+  }
+  for (let i = 0; i < 5; i++) {
+    data += "<br/>";
+    for (let j = 0; j < 5; j++) {
+      data += bang[i][j] + "&nbsp;&nbsp;";
+    }
+  }
+
+  b.innerHTML = data;
+
+  function Giatri() {
+    let X = prompt("X: ");
+    let Y = prompt("Y: ");
+    data = "";
+    bang[X][Y] = "x";
+    for (let i = 0; i < 5; i++) {
+      data += "<br/>";
+      for (let j = 0; j < 5; j++) {
+        data += bang[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+      }
+
+    }
+      data += "<br/><br/><input type='button' value='chọn ô' onclick='Giatri()'>";
+      b.innerHTML = "<hr/>" + data;
+  }
+</script>
+</body>
+</html>
